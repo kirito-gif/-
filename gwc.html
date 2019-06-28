@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="" >
+<head>
+    <meta charset="UTF-8">
+    <title>第五大道购物车</title>
+    <script type="text/javascript" src="js/jquery.js" charset="UTF-8"></script>
+    <style type="text/css">
+        body, ul, li, dl, dt, dd, p, ol, h1, h2, h3, h4, h5, h6, form, img, table, fieldset, legend, header, nav, footer, menu, section, aside, article, canvas, figure, figcaption {
+            margin: 0;
+            padding: 0;
+        }
+        ul, li, ol {
+            list-style: none;
+        }
+        img, fieldset {
+            border: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 100;
+        }
+        body {
+            margin: 0 auto;
+            font: 12px/200% 'microsoft yahei','微软雅黑',Helvetica,Arial,Tahoma,"黑体",'宋体',sans-serif;
+            color: #000;
+        }
+        input, a {
+            outline: none;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        .yi {
+            background: #4200de;
+            height: 80px;
+        }
+        .yi img {
+            border: none;
+            margin-left: 109px;
+        }
+        .er {
+            background: #f2f2f2;
+            height: 30px;
+            list-style: none;
+        }
+        .er .er1 {
+            width: 1210px;
+            margin: 0 auto;
+        }
+        .er .er1 .er11 {
+            display: inline-block;
+            width: 110px;
+            color: #666;
+            position: relative;
+        }
+        .er .er1 .er11 .er111 {
+            float: left;
+            text-align: center;
+            line-height: 25px;
+            height: 30px;
+            width: 100%;
+            position: relative;
+        }
+        .er .er1 .er11 .er111 a {
+            font: 12px/200% 'microsoft yahei','微软雅黑',Helvetica,Arial,Tahoma,"黑体",'宋体',sans-serif;
+            display: inline-block;
+            margin-left: 7px;
+        }
+        .er .er1 .er11 .er111 p {
+            display: inline-block;
+            width: 16px;
+            height: 14px;
+            position: absolute;
+            left: 2px;
+            top: 7px;
+        }
+        .er .er1 .er11 .er111 i {
+            position: absolute;
+            height: 12px;
+            right: 0;
+            top: 9px;
+            border-left: 1px solid #dfdfdf;
+        }
+        .er .er1 .er12 {
+            display: inline-block;
+            color: #666;
+        }
+        .er .er1 .er12 .er112 {
+            line-height: 30px;
+            height: 30px;
+            width: 100%;
+            position: relative;
+            float: left;
+            font: 12px/200% 'microsoft yahei','微软雅黑',Helvetica,Arial,Tahoma,"黑体",'宋体',sans-serif;
+        }
+        .er .er1 .er12 .er112 p {
+            width: 25px;
+            height: 30px;
+            display: inline-block;
+            float: left;
+        }
+        .er .er1 .er13 {
+            width: 604px;
+            float: right;
+            line-height: 30px;
+            position: relative;
+            vertical-align: middle;
+            font: 12px/200% 'microsoft yahei','微软雅黑',Helvetica,Arial,Tahoma,"黑体",'宋体',sans-serif;
+            color: #000;
+        }
+        .er .er1 .er13 .er134 {
+            position: absolute;
+            right: 350px;
+            top: 0;
+        }
+        .er .er1 .er13 .er134 .er1342 {
+            width: 88px;
+            display: inline-block;
+            color: #666;
+        }
+        .er .er1 .er13 .er134 .er1342 .er1344 .er1345 {
+            width: 22px;
+            height: 24px;
+            float: left;
+            margin: 0 5px 0 17px;
+        }
+        .er .er1 .er13 .er134 .er1341 {
+            text-align: right;
+            width: 100px;
+            display: inline-block;
+            color: #666;
+        }
+        .er .er1 .er13 .er134 .er1341 .er1343 {
+            text-align: right;
+            display: inline-block;
+        }
+        .er .er1 .er13 .er134 .er1341 .er1343 .er1346 {
+            padding-right: 20px;
+        }
+        .er .er1 .er13 .er134 .er1341 .er1343 i {
+            position: absolute;
+            height: 12px;
+            right: 0;
+            top: 9px;
+            border-left: 1px solid #dfdfdf;
+        }
+        .er .er1 .er13 .er134 .er1341 .er1343 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .er .er1 .er13 .er133 {
+            display: inline-block;
+            color: #666;
+            width: 130px;
+            position: absolute;
+            right: 215px;
+            top: 0;
+            z-index: 150;
+        }
+        .er .er1 .er13 .er133 dd {
+            border: none;
+            outline: 0;
+            list-style: none;
+            float: left;
+            text-align: center;
+            width: 100%;
+            background: #fff;
+        }
+        .er .er1 .er13 .er133 dd li {
+            color: inherit;
+            text-decoration: none;
+            line-height: 30px;
+            text-align: center;
+        }
+        .er .er1 .er13 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .er .er1 .er13 .er132 {
+            display: inline-block;
+            color: #666;
+            position: absolute;
+            width: 85px;
+            right: 130px;
+            top: 0;
+        }
+        .er .er1 .er13 i {
+            position: absolute;
+            height: 12px;
+            right: 0;
+            top: 9px;
+            border-left: 1px solid #dfdfdf;
+        }
+        .er .er1 .er13 dt {
+            line-height: 30px;
+            height: 30px;
+            width: 100%;
+            position: relative;
+        }
+        .er .er1 .er13 .er131 {
+            width: 106px;
+            padding: 0 11px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 33;
+            cursor: pointer;
+        }
+        .er .er1 .er13 .er131 dd {
+            clear: both;
+            float: left;
+            text-align: center;
+            display: none;
+        }
+        .er .er1 .er13 .er131 dd dd:hover {
+            display: block;
+        }
+        .er .er1 .er13 .er131 dd li {
+            line-height: 20px;
+            font-size: 13px;
+        }
+        .san {
+            background: #fff;
+        }
+        .san .san15 {
+            position: absolute;
+            top: 35px;
+            z-index: 30;
+            right: 123px;
+            width: 200px;
+            height: 30px;
+            background-size: 100% 100%;
+            transition: 1.5s;
+        }
+        .san .san14 {
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            z-index: 30;
+        }
+        .san .san14 dd {
+            clear: both;
+            width: 268px;
+            padding: 10px 10px 20px 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+        }
+        .san .san14 dd ul {
+            max-height: 335px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .san .san14 dt {
+            width: 94px;
+            height: 32px;
+            line-height: 32px;
+            text-indent: 45px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            float: right;
+            color: #666;
+        }
+        .san .san14 dl {
+            width: 290px;
+            background: #fff;
+            position: relative;
+        }
+        .san .san13 {
+            overflow: hidden;
+            position: absolute;
+            /* left: 380px; */
+            left: 485px;
+            top: 36px;
+        }
+        .san .san13 .san131 {
+            width: 343px;
+            padding: 2px 1.5px;
+            background: #c69c6d;
+            height: 35.5px;
+        }
+        .san .san13 .san131 li {
+            display: inline-block;
+            float: left;
+            color: #999;
+            font-size: 11px;
+            padding-right: 25px;
+            line-height: 32px;
+        }
+        .san .san13 .san131 li a {
+            color: #999;
+        }
+        .san .san13 .san131 li a a:hover {
+            color: #f00;
+        }
+        .san .san13 .san131 .san1312 {
+            /* width: 86px; */
+            width: 80px;
+            height: 34px;
+            border: none;
+            float: left;
+            color: #fff;
+            font-size: 15px;
+            background: none;
+        }
+        .san .san13 .san131 .san1311 {
+            outline: none;
+            width: 410px;
+            width: 260px;
+            height: 34px;
+            line-height: 34px;
+            vertical-align: middle;
+            border: none;
+            background: #fff;
+            padding-left: 3px;
+            float: left;
+        }
+        .san .san12 {
+            position: absolute;
+            top: 10px;
+            left: 240px;
+            top: 14px;
+            left: 290px;
+            width: 135px;
+            width: 142px;
+            height: 80px;
+            overflow: hidden;
+        }
+        .san .san1 {
+            position: relative;
+            height: 110px;
+            width: 1210px;
+            margin: 0 auto;
+        }
+        .san .san1 .san11 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 244px;
+            height: 110px;
+        }
+        .si-nav {
+            width: 100%;
+            height: 38px;
+            vertical-align: middle;
+            box-shadow: 0 4px 4px #c7c6c6;
+            -o-box-shadow: 0 4px 4px #c7c6c6;
+            -moz-box-shadow: 0 4px 4px #c7c6c6;
+            -webkit-box-shadow: 0 4px 4px #c7c6c6;
+        }
+        .si-nav .si1 {
+            width: 1210px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .si-nav .si1 .si12 {
+            position: absolute;
+            right: 15px;
+            top: 0;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .si-nav .si1 .si12 a {
+            height: 40px;
+            display: inline-block;
+        }
+        .si-nav .si1 .si12 span {
+            display: inline-block;
+            width: 30px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            margin-right: 3px;
+        }
+        .si-nav .si1 .si12 li {
+            float: left;
+            margin-right: 12px;
+            width: 30px;
+            overflow: hidden;
+            width: 30px;
+        }
+        .si-nav .si1 .si13 {
+            position: absolute;
+            top: 0;
+            line-height: 38px;
+            overflow: hidden;
+            z-index: 10;
+            right: 144px;
+            width: 100px;
+            height: 38px;
+            background-size: 100% 100%;
+        }
+        .si-nav .si1 .si11 {
+            clear: both;
+            height: 40px;
+            width: 1210px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .si-nav .si1 .si11 .sii {
+            display: inline-block;
+            float: left;
+            width: 19px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 23px;
+        }
+        .si-nav .si1 .si11 a {
+            color: #c8a985;
+        }
+        .si-nav .si1 .si11 .si112 {
+            display: block;
+            width: 82px;
+            height: 38px;
+        }
+        .si-nav .si1 .si11 li {
+            display: inline-block;
+            float: left;
+            z-index: 20;
+            font-size: 14px;
+            text-align: center;
+            font-family: "微软雅黑";
+            height: 40px;
+            line-height: 40px;
+        }
+        .si-nav .si1 .si11 li .si111 {
+            width: 130px;
+            font-size: 14px;
+            font-weight: bold;
+            height: 38px;
+            color: #fff;
+            display: inline-block;
+            z-index: 999;
+        }
+        .single{
+            float:left;
+            width: 1132px;
+            margin-left: 207px;
+        }
+        .gwclb{
+            float:left;
+            width:1132px;
+        }
+        .tu img{
+            width:100px;
+            float:left;
+            margin-left: 45px;
+            margin-right: 30px;
+        }
+        #gwcgx{
+            width: 32px;
+            margin-left: 19px;
+            margin-top: 30px;
+            float:left;
+        }
+        .gwcspmc{
+            float:left;
+            width: 127px;
+            height: 94px;
+        }
+        .gwcjg{
+            float:left;
+            margin-top: 25px;
+            margin-left: 161px;
+        }
+        .gwcsl{
+            float:left;
+            margin-top: 22px;margin-left: 71px;
+        }
+        .gwcsc{
+            float:left;
+            margin-top: 24px;
+            margin-left: 85px;
+        }
+        .gwcjg2{
+            float:left;
+            margin-top: 25px;
+            margin-left: 161px;
+        }
+        .gwczj{
+            float:left;
+            margin-left: 27px;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<div class="yi">
+    <a href="">
+        <img src="http://img550.5lux.com.cn/2018/11/22/qr/154288026284_1300x80.jpg" alt="">
+    </a>
+</div>
+
+<div class="er">
+    <div class="er1">
+        <dl class="er11">
+            <dt class="er111">
+                <p style="background: url(img/1.png) no-repeat center;"></p>
+                <a href="http://www.5lux.com/">第五大道首页</a>
+                <i></i>
+            </dt>
+        </dl>
+        <dl class="er12">
+            <dt style="text-align: left;" class="er112">
+                <p style="background: url(img/zht01.png) no-repeat -348px -338px; "></p>
+                "贵宾专线：4008-6767-38"
+            </dt>
+        </dl>
+        <div class="er13">
+            <div class="er131" onclick="window.location.href='/download'" id="er131">
+                <dl id="er1313" style="background:#f2f2f2;">
+                    <dt id="er1311" style="background: url(img/zht01.png) no-repeat -218px -370px;">
+                        <span>手机版下载</span>
+                    </dt>
+                </dl>
+                <dd id="er1312">
+                    <ul>
+                        <li><img src="img/ewm1.jpg" width="106" alt=""></li>
+                        <li>扫描下载APP</li>
+                        <li>立即<span style="color:red;font-size:16px;">赠送50元</span></li>
+                    </ul>
+                </dd>
+            </div>
+            <dl class="er132">
+                <dt>
+                    <a href="http://www.5lux.com/help/" style=" margin-left:20px;">帮助中心</a>
+                    <i></i>
+                </dt>
+            </dl>
+            <dl class="er133" id="er133">
+                <dt class="er1331" style="background: url(img/zht01.png) no-repeat -253px -436px;" id="er1331">
+                    <a href="http://www.5lux.com/uuser/">
+                        <span style="float: left;padding-left: 15px;">我的第五大道</span>
+                        <i></i>
+                    </a>
+                </dt>
+                <dd id="er134" style="display: none">
+                    <ul id="er135">
+                        <a class="ert1" href="http://www.5lux.com/uuser/order_index"><li class="erli">我的订单</li></a>
+                        <a class="ert1" href="http://www.5lux.com/ugood/collect"><li class="erli">我的收藏</li></a>
+                        <a class="ert1" href="http://www.5lux.com/ugood/buy"><li class="erli">已购商品</li></a>
+                        <a class="ert1" href="http://www.5lux.com/uuser/account_my_coupons"><li class="erli">我的礼券</li></a>
+                        <a class="ert1" href="http://www.5lux.com/uuser/account_score"><li class="erli">我的积分</li></a>
+                    </ul>
+                </dd>
+            </dl>
+            <div class="er134">
+                <dl class="er1341">
+                    <dt class="er1343">
+                        <a href="http://localhost:63342/zakediye2.0/xiangmu/xiangmu01/dist/dl.html?_ijt=danthknh7t41vudsvfml3cid9q" target="_blank">
+                            <span class="er1346">登录</span>
+                        </a>
+                        <i></i>
+                    </dt>
+                </dl>
+                <dl class="er1342">
+                    <dt class="er1344">
+                        <span class="er1345" style="background: url(img/gif01.gif) no-repeat;
+"></span>
+                        <a href="http://localhost:63342/zakediye2.0/xiangmu/xiangmu01/dist/zc.html?_ijt=danthknh7t41vudsvfml3cid9q" target="_blank">
+                            注册
+                        </a>
+                        <i></i>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="san">
+    <div class="san1">
+        <div class="san11">
+            <a href="http://www.5lux.com/">
+                <img src="img/logo.jpg" alt="www.5lux.com" style="width:244px;" title="第五大道奢华网">
+            </a>
+        </div>
+        <div class="san12">
+            <a href="">
+                <img src="img/yijian.jpg" alt="">
+            </a>
+        </div>
+        <div class="san13">
+            <form action="http://www.5lux.com/search/index" method="GET" accept-charset="utf-8">
+                <div class="san131">
+                    <input type="text" autocomplete="off" placeholder="太阳镜" style="color:grey;" class="san1311">
+                    <input type="button" value="搜 索" class="san1312">
+                    <ul style="clear: both;">
+                        <li>
+                            <a href="http://www.5lux.com/good/list/127" class="sanli">连衣裙</a>
+                        </li>
+                        <li>
+                            <a href="http://www.5lux.com/good/list/14" class="sanli">美妆</a>
+                        </li>
+                        <li>
+                            <a href="http://www.5lux.com/search/index?keyword=运动户外&stoken=s8dfxs2s0" class="sanli">户外运动</a>
+                        </li>
+                        <li>
+                            <a href="http://www.5lux.com/good/list/4" class="sanli">箱包</a>
+                        </li>
+                        <li>
+                            <a href="http://www.5lux.com/good/list/165" class="sanli">配饰</a>
+                        </li>
+                        <li>
+                            <a href="http://www.5lux.com/good/list/138" class="sanli">腕表</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="san14">
+            <dl>
+                <dt style="background: url(img/zht01.png) no-repeat -376px -405px;" id="sandt">
+                    <img src="img/gwutb.png" alt="" style="    position: absolute;left: 10px;top: 2px;">
+                    <span>0</span>
+                </dt>
+                <dd style="display: none" id="sandd">
+                    <ul>
+                        <li>
+                            <p>
+                                购物车暂时没有商品
+                                <br>
+                                赶紧选择心爱的商品吧
+                            </p>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <a href="http://overseas.5lux.com/">
+            <div class="san15" style=" background: url(img/logio2.1.jpg) no-repeat;"></div>
+        </a>
+    </div>
+</div>
+
+<div class="si-nav" style="background: url(img/nav.png) repeat-x;">
+    <div class="si1">
+        <ul class="si11">
+            <li class="sit1">
+                <a href="" class="si111" style="background: url(img/zht02.png) -8px -215px no-repeat;">商品分类</a>
+                <div class="zuihou" style="   background: #99CCFF;display: none;  width: 130px;   min-height: 314px; position: relative; z-index: 1000;  vertical-align: top;">
+                    <ul>
+                        <li class="zuihou1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihout1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihout2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihout4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihout3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="zuihouq1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihoutq1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihoutq2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihoutq4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihoutq3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="zuihouw1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihoutw1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihoutw2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihoutw4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihoutw3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="zuihoue1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihoute1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihoute2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihoute4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihoute3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="zuihour1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihoutr1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihoutr2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihoutr4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihoutr3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="zuihouy1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihouty1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihouty2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihouty4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihouty3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="zuihoua1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihouta1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihouta2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihouta4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihouta3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="zuihous1" style="    vertical-align: top;position: relative; width: 130px; z-index: 1000;">
+                            <div class="zuihout" style="  background-position: -3px -5px;  opacity: 0.85;height: 36px; text-align: left; line-height: 36px;margin: 0 auto;padding-left: 48px;">
+                                <i class="zuihouts1" style="background: url(img/zhthei1.png) 15px no-repeat;  background-position: -3px -5px;  display: block;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <i class="zuihouts2" style="background: url(img/zhtbai1.png) 15px no-repeat;  background-position: -3px -5px;  display: none;  width: 50px; height: 33px; position: absolute; top: 1px;left: -1px;"></i>
+                                <a href="">
+                                    <span style="    color: #c69c6d;">品牌推荐</span>
+                                    <i class="zuihouts4" style="position: absolute;right: 2px; top: 0; height: 36px; width: 20px;display: none; background: url(img/zht03.png) no-repeat -304px -33px;"></i>
+                                </a>
+                            </div>
+                            <div class="zuihouts3" style=" display: none;   width: 800px; background-color: #ffffff; position: absolute; left: 130px; top: 0px; min-height: 220px;">
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    background-color: #ffffff;min-width: 605px;max-width: 750px;border-bottom: #d7d7d7 1px solid;margin: 10px 0px 10px 20px;float: left;clear: both;overflow: hidden; line-height: 25px;">
+                                    <h2 style="float: left;padding-left: 25px;color: #CF0201;width: 105px;font-size: 14px;font-style: normal;    padding-left: 25px; text-align: left;">
+                                        <a href="" style="    font-size: 14px;color: #CF0201;">国际高端</a>
+                                    </h2>
+                                    <div style="    max-width: 500px;min-height: 25px; line-height: 25px;float: left; display: block;">
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                        <a href="" style="    color: #757272;font-size: 12px;float: left; margin-right: 10px;">Louis Vuitton/LV</a>
+                                    </div>
+                                </div>
+                                <div style="    float: left; padding-left: 25px;width: 590px;height: 70px;">
+                                    <a href="" style="    display: block; width: 115px; height: 30px;line-height: 30px;text-align: center; color: #fff; background-color: #cf0201; margin-top: 20px;float: left; margin-left: 20px;">进入所有品牌</a>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="" class="si112">品牌</a>
+            </li>
+            <li>
+                <a href="" class="si112">最新</a>
+            </li>
+            <li>
+                <a href="" class="si112">女士</a>
+            </li>
+            <li>
+                <a href="" class="si112">男士</a>
+            </li>
+            <li>
+                <a href="" class="si112">生活馆</a>
+            </li>
+            <li>
+                <a href="" class="si112">海外馆</a>
+            </li>
+            <li>
+                <a href="" class="si112">时尚</a>
+            </li>
+            <li>
+                <a href="" class="si112">特惠</a>
+            </li>
+            <li>
+                <a href="" class="si112">礼品区</a>
+            </li>
+            <li class="sit">
+                <i style=" background: url(img/zht03.png) no-repeat -58px -169px;" class="sii"></i>
+                <a href="" class="si112">到店</a>
+            </li>
+        </ul>
+        <ul class="si12">
+            <li class="si121">
+                <div style="width: 200px;overflow: hidden;">
+                    <a href="">
+                        <span style="background: url(img/zht03.png) no-repeat -237px -66px"></span>
+                        <p>品牌销售，官方验真</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="">
+                        <span style="background: url(img/zht03.png) no-repeat -296px -66px;"></span>
+                        <p>尊享品牌会员服务</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="">
+                        <span style="    background: url(img/zht03.png) no-repeat -354px -66px;"></span>
+                        <p>商务诚信示范企业</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <a href="http://overseas.5lux.com/">
+            <div class="si13" style=" background: url(img/gif02.gif) no-repeat;"></div>
+        </a>
+    </div>
+</div>
+
+<div style="">
+    <div style="background: url(img/gwc.jpg) no-repeat;    width: 700px;height: 47px;float: right;_display: inline;margin: 35px 180px 30px 0px;"></div>
+    <div style="width:1133px;height:30px;background:#50beff;float:left;margin-left: 206px;">
+        <div style="float:left;width:250px;">
+            <input type="checkbox" style="margin-top: 10px;margin-left: 30px;">
+            <span style="line-height: 30px;display: inline-block;    position: absolute;">全选</span>
+        </div>
+        <div style="float:left;margin-right: 85px;">商品名称</div>
+        <div style="float:left;margin-right: 90px;">商品属性</div>
+        <div style="float:left;margin-right: 80px;">购物价</div>
+        <div style="float:left;margin-right: 80px;">购买数量</div>
+        <div style="float:left;margin-right: 80px;">活动信息</div>
+        <div style="float:left;margin-right: 80px;">小计</div>
+        <div style="float:left;margin-right: 40px;">操作</div>
+        <div style="float:left">总价</div>
+    </div>
+
+    <div class="single"></div>
+
+
+</div>
+<div class="shiyi" style="    float: left;  width: 100%;border-top: 1px solid #c9c9c9;background:url(img/footer.jpg) center;">
+    <div style="    width: 1210px;height: 600px; margin: 0 auto;">
+        <div style="    height: 116px; border-bottom: 1px solid #c9c9c9;clear: both;">
+            <ul>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div style="    height: 283px; clear: both;">
+            <div style="    float: left;">
+                <ul style="    padding-left: 20px;">
+                    <li style="width: 185px; overflow: hidden; float: left;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px; color: #000;    display: block;">服务保障</span>
+                        <span style="    display: block;"><a href="" style="    color: #333; font-size: 12px;">品牌授权正版</a></span>
+                        <span style="    display: block;"><a href="" style="    color: #333; font-size: 12px;">品牌客服</a></span>
+                        <span style="   display: block;"><a href="" style="    color: #333; font-size: 12px;">预约到店体验</a></span>
+                        <span style="   display: block;"><a href="" style="    color: #333; font-size: 12px;">7天无理由退货</a></span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">使用帮助</span>
+                        <span style="display: block">
+                            <a href="">常见问题</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">会员制度</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">集团采购</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">礼品卡</a>
+                        </span>
+                    </li>
+                    <li  style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">支付方式</span>
+                        <span style="display: block">
+                            <a href="">到店付款</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">货到付款</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">在线支付</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">余额支付</a>
+                        </span>
+                        <span style="display: block;">
+                            <a href="">分期付款</a>
+                        </span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">配送方式</span>
+                        <span style="display: block;">
+                            <a href="">配送说明</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">专柜自提</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">运费说明</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">验货签收</a>
+                        </span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">售后服务</span>
+                        <span style="display: block">
+                            <a href="">品牌售后</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">售后咨询</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">退换政策</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">发票保障</a>
+                        </span>
+                    </li>
+                    <li style="width: 140px;overflow: hidden; float: left;height: 283px;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000;display: block">
+                            <a href="">第五大道APP</a>
+                        </span>
+                        <span>
+                            <img src="img/evm.jpg" alt="">
+                        </span>
+                    </li>
+                    <li style="    width: 125px;    overflow: hidden; float: left;  height: 283px;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000;display: block">
+                            <a href="">第五大道微博</a>
+                        </span>
+                        <span>
+                            <img src="img/evm.jpg" alt="">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="    text-align: center;color: #fff;">
+            <div style="    line-height: 66px;">
+                <a href="" style="    color: #fff;    font-size: 12px;">箱包</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">美妆</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">服饰</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">腕表</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">配饰</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">鞋靴</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">特惠</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">礼品区</a>
+            </div>
+            <div>
+                <a href="" style="    color: #fff;    font-size: 12px;">关于第五大道</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">网站地图</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">品牌合作区</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">媒体聚焦</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">商务合作</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">加入第五大道</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">友情链接</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">奢尚志</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">联系我们</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">投诉建议</a>
+                <p style="    width: 100%; padding: 20px 0;">Copyright © 2008-2014 瑞美嘉信国际信息技术（北京）有限公司  <span style="color:#bfc1cc">版权所有京ICP备09012701号-1</span></p>
+            </div>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        var token = parseInt(localStorage.getItem('token'));
+        $.get('http://47.104.244.134:8080/cartlist.do', {
+            token: token
+        }).then(data => {
+            console.log(data)
+            for (let i = 1; i < data.length; i++) {
+                var a = data[i].goods
+                console.log(a.picurl)
+                let shop = `
+                    <div class="gwclb">
+			        <div class="single1">
+			        	<input type="checkbox" name="" id="gwcgx" value="" />
+			        	<div class="tu">
+			        		<img src="http:${a.picurl}" >
+			        	</div>
+			        	<p class="gwcspmc">${a.name}</p>
+			        </div>
+
+			        <div class="single2">
+			        	<p class="gwcjg">${a.price}</p>
+			        	<form action="" method="" class="gwcsl">
+			        		<input type="button" name="" id="" value="-" />
+			        		<input type="text" name="" id="" value="${data[i].count}" style="width:50px;"/>
+			        		<input type="button" name="" id="" value="+" />
+			        	</form>
+			        		<p class="gwcjg2">${a.price}</p>
+			        	<p></p>
+			        	<a href="#" class="gwcsc">删除</a>
+			        	<div class="gwczj">
+			        	<input type="text" style="width:50px;">
+</div>
+			        </div>
+			        </div>
+			        `
+
+                let list = document.querySelector(".single")
+                list.innerHTML += shop
+            }
+        })
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(document).ready(function(){
+        var move=$(".er1331");
+        var timer=null;
+        move.each(function(){
+            var move_c2=$(this).next("#er134");
+            $(this).mouseover(function(){
+                move_c2.show();
+                clearTimeout(timer);
+            });
+            $(this).mouseout(function(){
+                timer=setTimeout(function(){move_c2.hide()});
+            });
+            move_c2.mouseover(function(){
+                clearTimeout(timer);
+            });
+            move_c2.mouseout(function(){
+                timer=setTimeout(function(){move_c2.hide()});
+            });
+        });
+    });
+    $(document).ready(function(){
+        $(".ert1").hover(function () {
+            $(this).css("color","#f00");
+        },function () {
+            $(this).css("color","#000");
+        });
+    });
+    $(document).ready(function(){
+        var move=$("#er1313");
+        var timer=null;
+        move.each(function(){
+            var move_c2=$(this).next("#er1312");
+            $(this).mouseover(function(){
+                move_c2.show();
+                clearTimeout(timer);
+            });
+            $(this).mouseout(function(){
+                timer=setTimeout(function(){move_c2.hide()});
+            });
+            move_c2.mouseover(function(){
+                clearTimeout(timer);
+            });
+            move_c2.mouseout(function(){
+                timer=setTimeout(function(){move_c2.hide()});
+            });
+        });
+    });
+    $(document).ready(function(){
+        var move=$("#sandt");
+        var timer=null;
+        move.each(function(){
+            var move_c2=$(this).next("#sandd");
+            $(this).mouseover(function(){
+                move_c2.show();
+                clearTimeout(timer);
+            });
+            $(this).mouseout(function(){
+                timer=setTimeout(function(){move_c2.hide()});
+            });
+            move_c2.mouseover(function(){
+                clearTimeout(timer);
+            });
+            move_c2.mouseout(function(){
+                timer=setTimeout(function(){move_c2.hide()});
+            });
+        });
+    });
+    $(document).ready(function(){
+        $("#er1311").hover(function () {
+            $("#er1311").css("color", "red").css("background","url(img/zht01.png) no-repeat -218px -405px");
+            $("#er131").css("background","#fff");
+            $("#er1313").css("background","#fff");
+            $("#er131").css("border-left","1px solid #000");
+            $("#er131").css("border-bottom","1px solid #000");
+            $("#er131").css("border-right","1px solid #000");
+
+        },function () {
+            $("#er1311").css("color","#000").css("background","url(img/zht01.png) no-repeat -218px -370px");
+            $("#er131").css("background","#f2f2f2");
+            $("#er1313").css("background","#f2f2f2");
+            $("#er131").css("border-left","0");
+            $("#er131").css("border-bottom","0");
+            $("#er131").css("border-right","0")
+        });
+    });
+    $(document).ready(function(){
+        $("#er1331").hover(function () {
+            $("#er1331").css("background","url(img/zht01.png) no-repeat -253px -465px").css("color", "red");
+            $("#erli").css("color","red");
+        },function () {
+            $("#er1331").css("background","url(img/zht01.png) no-repeat -253px -436px").css("color", "#000");
+        });
+    });
+    $(document).ready(function(){
+        $("#er133").hover(function () {
+            $("#er133").css("background","#fff");
+            $("#er133").css("border-left","1px solid #000");
+            $("#er133").css("border-bottom","1px solid #000");
+            $("#er133").css("border-right","1px solid #000");
+        },function () {
+            $("#er133").css("background","#f2f2f2");
+            $("#er133").css("border-left","0");
+            $("#er133").css("border-bottom","0");
+            $("#er133").css("border-right","0")
+        });
+    });
+    $(document).ready(function(){
+        $(".sit1").hover(function () {
+            $(".zuihou").css("display","block");
+        },function () {
+            $(".zuihou").css("display","none");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihou1").hover(function () {
+            $(".zuihout2").css("display","block");
+            $(".zuihout3").css("display","block");
+            $(".zuihout4").css("display","block");
+            $(".zuihou1").css("background","#ccc");
+        },function () {
+            $(".zuihout2").css("display","none");
+            $(".zuihout3").css("display","none");
+            $(".zuihout4").css("display","none");
+            $(".zuihou1").css("background","rgb(153, 204, 255)");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihouq1").hover(function () {
+            $(".zuihoutq2").css("display","block");
+            $(".zuihoutq3").css("display","block");
+            $(".zuihoutq4").css("display","block");
+            $(".zuihouq1").css("background","#ccc");
+        },function () {
+            $(".zuihoutq2").css("display","none");
+            $(".zuihoutq3").css("display","none");
+            $(".zuihoutq4").css("display","none");
+            $(".zuihouq1").css("background","rgb(153, 204, 255)");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihouw1").hover(function () {
+            $(".zuihoutw2").css("display","block");
+            $(".zuihoutw3").css("display","block");
+            $(".zuihoutw4").css("display","block");
+            $(".zuihouw1").css("background","#ccc");
+        },function () {
+            $(".zuihoutw2").css("display","none");
+            $(".zuihoutw3").css("display","none");
+            $(".zuihoutw4").css("display","none");
+            $(".zuihouw1").css("background","rgb(153, 204, 255)");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihoue1").hover(function () {
+            $(".zuihoute2").css("display","block");
+            $(".zuihoute3").css("display","block");
+            $(".zuihoute4").css("display","block");
+            $(".zuihoue1").css("background","#ccc");
+        },function () {
+            $(".zuihoute2").css("display","none");
+            $(".zuihoute3").css("display","none");
+            $(".zuihoute4").css("display","none");
+            $(".zuihoue1").css("background","rgb(153, 204, 255)");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihour1").hover(function () {
+            $(".zuihoutr2").css("display","block");
+            $(".zuihoutr3").css("display","block");
+            $(".zuihoutr4").css("display","block");
+            $(".zuihour1").css("background","#ccc");
+        },function () {
+            $(".zuihoutr2").css("display","none");
+            $(".zuihoutr3").css("display","none");
+            $(".zuihoutr4").css("display","none");
+            $(".zuihour1").css("background","rgb(153, 204, 255)");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihouy1").hover(function () {
+            $(".zuihouty2").css("display","block");
+            $(".zuihouty3").css("display","block");
+            $(".zuihouty4").css("display","block");
+            $(".zuihouy1").css("background","#ccc");
+        },function () {
+            $(".zuihouty2").css("display","none");
+            $(".zuihouty3").css("display","none");
+            $(".zuihouty4").css("display","none");
+            $(".zuihouy1").css("background","rgb(153, 204, 255)");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihous1").hover(function () {
+            $(".zuihouts2").css("display","block");
+            $(".zuihouts3").css("display","block");
+            $(".zuihouts4").css("display","block");
+            $(".zuihous1").css("background","#ccc");
+        },function () {
+            $(".zuihouts2").css("display","none");
+            $(".zuihouts3").css("display","none");
+            $(".zuihouts4").css("display","none");
+            $(".zuihous1").css("background","rgb(153, 204, 255)");
+        });
+    });
+    $(document).ready(function(){
+        $(".zuihoua1").hover(function () {
+            $(".zuihouta2").css("display","block");
+            $(".zuihouta3").css("display","block");
+            $(".zuihouta4").css("display","block");
+            $(".zuihoua1").css("background","#ccc");
+        },function () {
+            $(".zuihouta2").css("display","none");
+            $(".zuihouta3").css("display","none");
+            $(".zuihouta4").css("display","none");
+            $(".zuihoua1").css("background","rgb(153, 204, 255)");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <title>第五大道登录</title>
+    <style type="text/css">
+        body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend,header,nav,footer,menu,section,aside,article,canvas,figure,figcaption{margin:0; padding:0;}
+        ul,li,ol{list-style:none;}
+        img,fieldset{border:0; }
+        a{text-decoration:none; color:#333;}
+        h1,h2,h3,h4,h5,h6{font-weight:100;}
+        body{margin:0 auto;font: 12px/200% 'microsoft yahei','微软雅黑',Helvetica,Arial,Tahoma,"黑体",'宋体',sans-serif;
+            color: #000;}
+        input,a{outline:none;}
+        html,body{width:100%;height:100%;}
+        .w{
+            width:1220px;
+            margin: 0 auto;
+        }
+        .bglogo{
+            width: 244px;
+            height: 98px;
+            float: left;
+        }
+        .welcome{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 24px;
+            color: #ccc;
+            margin-top:30px;
+        }
+        .fr{
+            font-size: 12px;
+            float: right;
+            margin-top: 35px ;
+        }
+        .fr a{
+            text-decoration: none;
+            color:#999;
+        }
+        .fr span{
+            width: 17px;
+            height: 21px;
+            /* margin: 0 5px; */
+            display: inline-block;
+            background: url(img/du3.png) no-repeat;
+            margin: 10px 5px;
+        }
+        /* 头部 结束*/
+        .tp{
+            position: relative;
+            height: 475px;
+            background: #e93854;
+        }
+        .dl{
+            position: absolute;
+            top: 30px;
+            right: 67px;
+            background: #fff;
+            width: 410px;
+            height: 469px;
+        }
+        .sm{
+            height: 54px;
+            color: #666;
+            margin-top: 20px;
+        }
+        .sm span{
+            display: inline-block;
+            width: 172px;
+            height: 18px;
+            text-align: center;
+            margin-top: 18px;
+            font-size: 18px;
+        }
+        .sm span:first-child{
+            border-right: 1.5px solid #000;
+        }
+
+        .ma{
+            position: relative;
+            width: 306px;
+            height: 168px;
+        }
+        .main{
+            width: 306px;
+            padding: 20px 20px 0 20px;
+        }
+        .er{
+            border: 1px solid #f4f4f4;
+            padding: 8px;
+            width: 155px;
+            height: 148px;
+            position: absolute;
+            left:64px ;
+            text-align: center;
+        }
+        .sj{
+            display: none;
+            position: absolute;
+            right: -18px;
+            top: -2px;
+            width: 141px;
+            height: 168px;
+        }
+        .dk{
+            margin: 20px auto;
+            text-align: center;
+            font-size: 12px;
+        }
+        .ffs li {
+            float: left;
+            margin-right: 18px;
+            font-size: 12px;
+            color: #999999;
+            position: relative;
+            padding-left: 32px;
+        }
+        .ffs li span{
+            display: inline-block;
+            width: 25px;
+            height:25px;
+            position: absolute;
+            left: 0;
+        }
+        .ffs li:first-child  span{
+            background: url(../img/qr-coagent.png) no-repeat ;
+        }
+        .ffs li:nth-child(2)  span{
+            background: url(../img/qr-coagent.png) no-repeat -27px;
+        }
+        .ffs li:nth-child(3)  span{
+            background: url(../img/qr-coagent.png) no-repeat -54px;
+        }
+        .db{
+            padding: 0 20px;
+            height:50px;
+            border-top: 1px solid #f4f4f4;
+            background-color: #fcfcfc;
+            line-height: 50px;
+        }
+        .db li{
+            position: relative;
+            float: left;
+            font-size: 12px;
+            padding-left: 24px;
+        }
+        .db li span{
+            display: inline-block;
+            width: 19px;
+            height:18px;
+
+        }
+        .db li b{
+            color: #ccc;
+            padding: 0 10px;
+        }
+        .db li:first-child  span{
+            background: url(../img/QQ-weixin.png) no-repeat;
+            position: absolute;
+            left: 0;
+            top: 16px;
+        }
+        .db li:nth-child(2)  span{
+            background: url(../img/QQ-weixin.png) no-repeat -20px 0;
+            position: absolute;
+            left: 0;
+            top: 16px;
+        }
+        .db li:nth-child(3)  span{
+            background: url(../img/pwd-icons-new.png) no-repeat -104px -75px;
+            position: absolute;
+            left: 0;
+            top: 16px;
+        }
+        .db li:last-child{
+            float:right;
+            color: #b61d1d;
+            font-size: 14px;
+        }
+        .zh{
+            display: none;
+            width: 306px;
+            height: 260px;
+            /* position: absolute;
+            top:126px;
+            left: 20px; */
+            padding:33px 20px 0 20px;
+        }
+        .zh label{
+            display: block;
+            float: left;
+            width: 39px;
+            height: 38px;
+            border: 1px solid #ddd;
+            border-right: none;
+        }
+
+        .phone2{
+            float: left;
+            width: 378px;
+            height: 38px;
+            border: 1px solid #ddd;
+            text-indent:12px;
+            margin-bottom: 20px;
+        }
+        .wj{
+
+            width: 306px;
+            margin-bottom: 20px;
+        }
+        .wm{
+            width: 48px;
+            font-size: 12px;
+            color: #666;
+            margin-left: 258px;
+        }
+        .dls{
+            border: 1px solid #e85356;
+            display: block;
+            width: 304px;
+            background: #e4393c;
+            height: 34px;
+            line-height: 34px;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .footer{
+            width: 1210px;
+            font-size: 12px;
+            text-align: center;
+            color: #999;
+            padding-bottom: 30px;
+            margin:0 auto  ;
+        }
+        .links{
+            padding-top: 30px;
+            padding-bottom: 15px;
+        }
+        .links a{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="header" style="    height: 98px;">
+    <div class="w">
+        <div class="logo" style="float: left;">
+            <a href="#" class="bglogo" style="background:url(img/du1.jpg) no-repeat ;"></a>
+            <span style="    display: inline-block; width: 2px;height: 44px; vertical-align: middle; background-color: #ccc;  margin: 28px 18px;"></span>
+        </div>
+        <div class="welcome">欢迎登录</div>
+
+        <div class="fr">
+            <span style="float:left;"></span>
+            <a href="" style="    float: left; margin-top: 12px;">客服热线</a>
+            <a href="" class="col" style="float: left; margin-top: 12px;">4008-6767-38 </a>
+        </div>
+    </div>
+</div>
+<!-- 头部结束 -->
+<div class="contains" style="    background-color: #262626;    width: 100%;text-align: center;">
+    <div class="tp" style="background:url(img/du2.jpg);    padding: 30px 0; background-size: 100% 584px;    position: relative; width: 1210px;/*height: 100%;*/background-repeat: no-repeat;background-size: 100% 100%; margin: 0 auto;">
+        <div class="dl" >
+            <div class="sm ">
+                <span class="sms">扫码登录</span><span id="smss">账号登录</span>
+            </div>
+            <div class="main" style="    margin-bottom: 69px;">
+                <div class="ma" style="   ">
+                    <div class="er">
+                        <img src="img/du4.png" calss="ers">
+                    </div>
+                    <div class="sj">
+                        <img src="img/du5.png"  >
+                    </div>
+                </div>
+                <div class="dk" style=" margin-left: 59px;font-size:16px;">
+
+                    打开 <span style="color:#f00;">第五大道APP</span>扫一扫登录 <br>立即注册有惊喜>
+                </div>
+            </div>
+            <div class="zh" style="   margin-bottom: 26px;">
+                <div >
+                    <input type="text" class="phone2" placeholder="邮箱/用户名/已验证手机号" id="phone1"/>
+                </div>
+                <div>
+                    <input type="text" class="phone2" placeholder="密码" id="phone2"/>
+                </div>
+                <div style="width: 338px;  margin: 0 31px;height: 54px;">
+                    <div style="    font-size: 0;display: inline-block;*zoom: 1;*display: block;color: #f62b0f; height: 14px;line-height: 14px;  margin: 20px 0; /* cursor: pointer; */">
+                        <p style="    height: 14px; line-height: 14px; font-size: 14px;   display: inline-block;  *zoom: 1; *display: block;  vertical-align: middle;margin-left: 5px;">用户名不正确</p>
+                    </div>
+                </div>
+                <input id="denglu" type="submit" value="立即登录" style="    transition: all linear 0.5s; -moz-transition: all linear 0.5s; -webkit-transition: all linear 0.5s;  -o-transition: all linear 0.5s; /* display: inline-block; */ width: 383px; height: 50px; line-height: 50px;text-align: center; color: #fff; background: #333;/*margin: 0 31px; text-decoration: none; */font-size: 18px; border: none; cursor: pointer;">
+                <ul style="margin-top: 20px;  height: 14px; line-height: 14px;font-size: 0;color: #999;">
+                    <li style="    float: left;">
+                            <input type="checkbox" style="float: left;">
+                        <p style="      margin-top: 2px;  display: inline-block; *zoom: 1;*display: block;font-size: 14px;  vertical-align: middle; margin-left: 5px;">自动登录</p>
+                    </li>
+                    <li style="    float: right;height: 100%;font-size: 14px;position: absolute;top:303px;left:271px;">
+                        <a href="http://localhost:63342/zakediye2.0/xiangmu/xiangmu01/dist/zc.html?_ijt=p1njkc4agnp4isd1e15vhbq64k" style="color:#f00">立即注册</a>
+                        |
+                        <a href="">忘记密码？</a>
+                    </li>
+                </ul>
+            </div>
+            <div style=" height: 16px;width: 100%;background: url(img/du6.jpg) 100% 100% no-repeat;"></div>
+            <div>
+                <div class="yi001">
+                <span style="position:absolute;top:418px;left:195px;display: block;" class="yi1">
+                    <img src="img/duq1.png" alt="">
+                </span>
+                <span style="position:absolute;top:418px;left:195px; display: none;" class="yi01">
+                    <img src="img/duq2.png" alt="">
+                </span>
+                </div>
+                <div class="yi002">
+                <span style="position: absolute;top:418px;left:120px;" class="yi2">
+                    <img src="img/duw1.png" alt="">
+                </span>
+                <span style="position: absolute;top:418px;left:120px;display: none;" class="yi02">
+                    <img src="img/duw2.png" alt="">
+                </span>
+                </div>
+                <div class="yi003">
+                <span style="position:absolute;top:418px;left:274px;" class="yi3">
+                    <img src="img/dub1.png" alt="">
+                </span>
+                <span style="position:absolute;top:418px;left:274px;display: none;" class="yi03">
+                    <img src="img/dub2.png" alt="">
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shiyi" style="border-top: 1px solid #c9c9c9;background:url(img/footer.jpg) center;">
+    <div style="    width: 1210px;height: 600px; margin: 0 auto;">
+        <div style="    height: 116px; border-bottom: 1px solid #c9c9c9;clear: both;">
+            <ul>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div style="    height: 283px; clear: both;">
+            <div style="    float: left;">
+                <ul style="    padding-left: 20px;">
+                    <li style="width: 185px; overflow: hidden; float: left;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px; color: #000;    display: block;">服务保障</span>
+                        <span style="    display: block;"><a href="" style="    color: #333; font-size: 12px;">品牌授权正版</a></span>
+                        <span style="    display: block;"><a href="" style="    color: #333; font-size: 12px;">品牌客服</a></span>
+                        <span style="   display: block;"><a href="" style="    color: #333; font-size: 12px;">预约到店体验</a></span>
+                        <span style="   display: block;"><a href="" style="    color: #333; font-size: 12px;">7天无理由退货</a></span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">使用帮助</span>
+                        <span style="display: block">
+                            <a href="">常见问题</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">会员制度</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">集团采购</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">礼品卡</a>
+                        </span>
+                    </li>
+                    <li  style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">支付方式</span>
+                        <span style="display: block">
+                            <a href="">到店付款</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">货到付款</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">在线支付</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">余额支付</a>
+                        </span>
+                        <span style="display: block;">
+                            <a href="">分期付款</a>
+                        </span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">配送方式</span>
+                        <span style="display: block;">
+                            <a href="">配送说明</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">专柜自提</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">运费说明</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">验货签收</a>
+                        </span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">售后服务</span>
+                        <span style="display: block">
+                            <a href="">品牌售后</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">售后咨询</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">退换政策</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">发票保障</a>
+                        </span>
+                    </li>
+                    <li style="width: 140px;overflow: hidden; float: left;height: 283px;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000;display: block">
+                            <a href="">第五大道APP</a>
+                        </span>
+                        <span>
+                            <img src="img/evm.jpg" alt="">
+                        </span>
+                    </li>
+                    <li style="    width: 125px;    overflow: hidden; float: left;  height: 283px;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000;display: block">
+                            <a href="">第五大道微博</a>
+                        </span>
+                        <span>
+                            <img src="img/evm.jpg" alt="">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="    text-align: center;color: #fff;">
+            <div style="    line-height: 66px;">
+                <a href="" style="    color: #fff;    font-size: 12px;">箱包</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">美妆</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">服饰</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">腕表</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">配饰</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">鞋靴</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">特惠</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">礼品区</a>
+            </div>
+            <div>
+                <a href="" style="    color: #fff;    font-size: 12px;">关于第五大道</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">网站地图</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">品牌合作区</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">媒体聚焦</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">商务合作</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">加入第五大道</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">友情链接</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">奢尚志</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">联系我们</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">投诉建议</a>
+                <p style="    width: 100%; padding: 20px 0;">Copyright © 2008-2014 瑞美嘉信国际信息技术（北京）有限公司  <span style="color:#bfc1cc">版权所有京ICP备09012701号-1</span></p>
+            </div>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+
+
+
+
+
+
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var SJ = document.getElementsByClassName(".sj")[0];
+    $(document).ready(function(){
+        $(".er").hover(function () {
+            $(this).delay().animate({left:"8px"}).stop();
+                $(".sj").css("display","block");
+        },function () {
+            $(this).delay().animate({left:"64px"}).stop();
+            $(".sj").css("display","none");
+        });
+    });
+
+    $(function(){
+        $('#smss').click(function(){
+            $(".main").hide();
+            $('.zh').show()
+        })
+
+    });
+    $('.sms').click(function(){
+        $(".zh").hide();
+        $('.main').show()
+        $('.er').animate({'left':"0"});
+        showAd()
+
+    });
+
+    $(document).ready(function(){
+        $(".yi001").hover(function () {
+            $(".yi01").css("display","block");
+
+        },function () {
+            $(".yi01").css("display","none");
+
+        });
+    });
+    $(document).ready(function(){
+        $(".yi002").hover(function () {
+            $(".yi02").css("display","block");
+        },function () {
+            $(".yi02").css("display","none");
+        });
+    });
+    $(document).ready(function(){
+        $(".yi003").hover(function () {
+            $(".yi03").css("display","block");
+        },function () {
+            $(".yi03").css("display","none");
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+    $(function(){
+        $("#denglu").click(function(){
+            $.post("http://47.104.244.134:8080/userlogin.do",{
+                name:$("#phone1").val(),
+                password:$("#phone2").val()
+            }).done(data=>{
+                console.log(data)
+                if(data.code==0){
+                                localStorage.setItem('username', $("#phone1").val()) ;         //把用户名存进去
+                                localStorage.setItem('token', data.data.token)              //把用户名存进去
+
+                                // window.location.href="index.html"
+                            }
+            })
+        })
+    })
+    // 登陆
+    // $("#denglu").click(function(){
+    //     $.post("http://47.104.244.134:8080/userlogin.do",{
+    //         name:$("#phone1").val(),
+    //         password:$("#phone2").val()
+    //     }).done(data=>{
+    //         console.log(data)
+    //         if(data.code==0){
+    //             localStorage.setItem('username', $("#phone1").val())          //把用户名存进去
+    //             localStorage.setItem('token', data.data.token)              //把用户名存进去
+    //
+    //             // window.location.href="index.html"
+    //
+    //         }
+    //     })
+    // })
+
+
+
+
+
+
+
+
+</script>
+</html>

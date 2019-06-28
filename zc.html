@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <title>第五大道注册</title>
+    <style type="text/css">
+        body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend,header,nav,footer,menu,section,aside,article,canvas,figure,figcaption{margin:0; padding:0;}
+        ul,li,ol{list-style:none;}
+        img,fieldset{border:0; }
+        a{text-decoration:none; color:#333;}
+        h1,h2,h3,h4,h5,h6{font-weight:100;}
+        body{margin:0 auto;font: 12px/200% 'microsoft yahei','微软雅黑',Helvetica,Arial,Tahoma,"黑体",'宋体',sans-serif;
+            color: #000;}
+        input,a{outline:none;}
+        html,body{width:100%;height:100%;}
+        .w{
+            width:1220px;
+            margin: 0 auto;
+        }
+        .bglogo{
+            width: 244px;
+            height: 98px;
+            float: left;
+        }
+        .welcome{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 24px;
+            color: #ccc;
+            margin-top:30px;
+        }
+        .fr{
+            font-size: 12px;
+            float: right;
+            margin-top: 35px ;
+        }
+        .fr a{
+            text-decoration: none;
+            color:#999;
+        }
+        .fr span{
+            width: 17px;
+            height: 21px;
+            /* margin: 0 5px; */
+            display: inline-block;
+            background: url(img/du3.png) no-repeat;
+            margin: 10px 5px;
+        }
+        /* 头部 结束*/
+        .tp{
+            position: relative;
+            height: 475px;
+            background: #e93854;
+        }
+        .dl{
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            background: #fff;
+            width: 410px;
+            height: 469px;
+        }
+        .sm span{
+            display: inline-block;
+            width: 172px;
+            height: 18px;
+            text-align: center;
+            margin-top: 18px;
+            font-size: 18px;
+        }
+        .sm span:first-child{
+            border-right: 1.5px solid #000;
+        }
+        .ffs li {
+            float: left;
+            margin-right: 18px;
+            font-size: 12px;
+            color: #999999;
+            position: relative;
+            padding-left: 32px;
+        }
+        .ffs li span{
+            display: inline-block;
+            width: 25px;
+            height:25px;
+            position: absolute;
+            left: 0;
+        }
+        .db li{
+            position: relative;
+            float: left;
+            font-size: 12px;
+            padding-left: 24px;
+        }
+        .db li span{
+            display: inline-block;
+            width: 19px;
+            height:18px;
+
+        }
+        .db li b{
+            color: #ccc;
+            padding: 0 10px;
+        }
+        .db li:last-child{
+            float:right;
+            color: #b61d1d;
+            font-size: 14px;
+        }
+        .zh label{
+            display: block;
+            float: left;
+            width: 39px;
+            height: 38px;
+            border: 1px solid #ddd;
+            border-right: none;
+        }
+        .links a{
+            margin: 0 10px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery.js" charset="UTF-8"></script>
+</head>
+<body>
+<div class="header" style="    height: 98px;">
+    <div class="w">
+        <div class="logo" style="float: left;">
+            <a href="#" class="bglogo" style="background:url(img/du1.jpg) no-repeat ;"></a>
+            <span style="    display: inline-block; width: 2px;height: 44px; vertical-align: middle; background-color: #ccc;  margin: 28px 18px;"></span>
+        </div>
+        <div class="welcome">注册第五大道</div>
+
+        <div class="fr">
+            <span style="float:left;"></span>
+            <a href="" style="    float: left; margin-top: 7px;">客服热线&nbsp&nbsp</a>
+            <a href="" class="col" style="float: left; margin-top: 7px;">4008-6767-38 </a>
+        </div>
+    </div>
+</div>
+<!-- 头部结束 -->
+<div class="contains" style="    background-color: #262626;    width: 100%;text-align: center;">
+    <div class="tp" style="background:url(img/du2.jpg);    padding: 30px 0; background-size: 100% 584px;    position: relative; width: 1210px;/*height: 100%;*/background-repeat: no-repeat;background-size: 100% 100%; margin: 0 auto;">
+        <div class="dl" style="    width: 400px; float: right; margin-right: 40px;">
+            <div style="    background: #fff;    padding: 0 30px; width: 340px; font-size: 0px;">
+                <div style="    padding: 35px 0; font-size: 20px;height: 20px;line-height: 20px;text-align: center;color: #000;">注册第五大道 </div>
+                <form action="http://www.5lux.com/user/register/phone" method="post">
+                    <input id="zz1" type="text" style="margin-bottom: 8px;    margin-bottom: 8px;    padding: 0 19px; width: 300px;height: 48px;border: 1px solid #ccc; font-size: 14px;" placeholder="手机号">
+                    <div style="margin-top: 8px;    padding-bottom: 16px;">
+                        <input  onblur="YZMHS()" value="" id="yzm2" type="text" placeholder="请输入验证码" style="float: left;vertical-align: middle;padding: 0 19px; width: 85px;    height: 48px; border: 1px solid #ccc;   font-size: 14px;">
+                        <span class="yz" onclick="yanzheng()"  id="yzm" style="    display: inline-block;  vertical-align: middle;  width: 78px; height: 50px;    float: left;margin-left: 10px; margin-bottom: 18px;    line-height: 50px;  text-align: center;  background-color: #f2f2f2;   font-size: 14px; cursor: pointer;">获取验证码</span>
+                        <input value="" id="yzm3" placeholder="请输入验证码" type="text" style="float:left;    float: left; width: 79px;height: 44px;margin-left: 11px;padding: 0 15px;">
+                    </div>
+                    <input id="yzmima" type="password" style="margin-bottom: 8px; padding: 0 19px;width: 300px;    height: 48px; border: 1px solid #ccc; font-size: 14px;"   placeholder="请输入密码" >
+                    <input id="yzmima2" onblur="YZMIMA()" placeholder="确认密码" type="password" style="margin-top: 8px;    padding: 0 19px;width: 300px;    height: 48px;border: 1px solid #ccc;font-size: 14px;">
+                    <input id="yzmtj" type="button" value="立即注册"  style="    transition: all linear 0.5s;-moz-transition: all linear 0.5s; -webkit-transition: all linear 0.5s;  -o-transition: all linear 0.5s;  /* display: inline-block; */width: 340px;  height: 50px; line-height: 50px; text-align: center; color: #fff;background: #333;  margin: 24px 0 20px;/* text-decoration: none; */font-size: 18px;border: none;cursor: pointer;">
+                    <div style="    height: 14px; line-height: 14px; padding-bottom: 30px;">
+                        <ladel style="    cursor: pointer; display: inline-block; height: 14px;width: 14px;vertical-align: middle;  margin-right: 5px;">
+                            <input type="checkbox">
+                            <i style="    width: 14px; height: 14px;    /* display: inline-block; */"></i>
+                        </ladel>
+                        <p style="display: inline-block; font-size: 13px; height: 14px; line-height: 14px;vertical-align: middle;    color: #999;">我已阅读并同意</p>
+                        <a href="" style="color: #333;    display: inline-block;  font-size: 13px; height: 14px; line-height: 14px;vertical-align: middle;">《第五大道用户协议》</a>
+                        <a href="" style="    color: #ff9900;    display: inline-block;font-size: 13px; height: 14px;line-height: 14px;vertical-align: middle;">已有账号？</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shiyi" style="border-top: 1px solid #c9c9c9;background:url(img/footer.jpg) center;">
+    <div style="    width: 1210px;height: 600px; margin: 0 auto;">
+        <div style="    height: 116px; border-bottom: 1px solid #c9c9c9;clear: both;">
+            <ul>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+                <li style="    width: 242px; height: 64px; float: left;  margin-top: 26px;">
+                    <a href="" style="color: #333; font-size: 12px;">
+                        <img src="img/14.jpg" alt="" style="    width: 64px;  height: 64px; display: inline-block; padding-left: 10px;padding-right: 5px; cursor: pointer;vertical-align: top; float: left;">
+                    </a>
+                    <div style="    display: inline-block;  float: left;  width: 160px; height: 48px; margin-top: 8px;">
+                        <p style="    font-weight: bold;">正品保障</p>
+                        <p style="    color: #333; font-size: 12px;">品牌授权,官方验真</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div style="    height: 283px; clear: both;">
+            <div style="    float: left;">
+                <ul style="    padding-left: 20px;">
+                    <li style="width: 185px; overflow: hidden; float: left;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px; color: #000;    display: block;">服务保障</span>
+                        <span style="    display: block;"><a href="" style="    color: #333; font-size: 12px;">品牌授权正版</a></span>
+                        <span style="    display: block;"><a href="" style="    color: #333; font-size: 12px;">品牌客服</a></span>
+                        <span style="   display: block;"><a href="" style="    color: #333; font-size: 12px;">预约到店体验</a></span>
+                        <span style="   display: block;"><a href="" style="    color: #333; font-size: 12px;">7天无理由退货</a></span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">使用帮助</span>
+                        <span style="display: block">
+                            <a href="">常见问题</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">会员制度</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">集团采购</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">礼品卡</a>
+                        </span>
+                    </li>
+                    <li  style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">支付方式</span>
+                        <span style="display: block">
+                            <a href="">到店付款</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">货到付款</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">在线支付</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">余额支付</a>
+                        </span>
+                        <span style="display: block;">
+                            <a href="">分期付款</a>
+                        </span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">配送方式</span>
+                        <span style="display: block;">
+                            <a href="">配送说明</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">专柜自提</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">运费说明</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">验货签收</a>
+                        </span>
+                    </li>
+                    <li style="    width: 185px;overflow: hidden;  float: left;">
+                        <span  style="    font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000; display: block;">售后服务</span>
+                        <span style="display: block">
+                            <a href="">品牌售后</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">售后咨询</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">退换政策</a>
+                        </span>
+                        <span style="display: block">
+                            <a href="">发票保障</a>
+                        </span>
+                    </li>
+                    <li style="width: 140px;overflow: hidden; float: left;height: 283px;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000;display: block">
+                            <a href="">第五大道APP</a>
+                        </span>
+                        <span>
+                            <img src="img/evm.jpg" alt="">
+                        </span>
+                    </li>
+                    <li style="    width: 125px;    overflow: hidden; float: left;  height: 283px;">
+                        <span style="font-weight: bold; margin-top: 20px;margin-bottom: 20px;  color: #000;display: block">
+                            <a href="">第五大道微博</a>
+                        </span>
+                        <span>
+                            <img src="img/evm.jpg" alt="">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="    text-align: center;color: #fff;">
+            <div style="    line-height: 66px;">
+                <a href="" style="    color: #fff;    font-size: 12px;">箱包</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">美妆</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">服饰</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">腕表</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">配饰</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">鞋靴</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">特惠</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">礼品区</a>
+            </div>
+            <div>
+                <a href="" style="    color: #fff;    font-size: 12px;">关于第五大道</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">网站地图</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">品牌合作区</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">媒体聚焦</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">商务合作</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">加入第五大道</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">友情链接</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">奢尚志</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">联系我们</a>
+                丨
+                <a href="" style="    color: #fff;    font-size: 12px;">投诉建议</a>
+                <p style="    width: 100%; padding: 20px 0;">Copyright © 2008-2014 瑞美嘉信国际信息技术（北京）有限公司  <span style="color:#bfc1cc">版权所有京ICP备09012701号-1</span></p>
+            </div>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+            <a href="">
+                <img src="img/GG.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    function yanzheng(){
+        var Num = "";
+        for(var i=0;i<6;i++){
+            Num+= Math.floor(Math.random()*10);
+        }
+        document.getElementById("yzm3").value=Num
+    }
+
+    function YZMHS() {
+        var YZM2 = document.getElementById("yzm2").value;
+        var YZM3 = document.getElementById("yzm3").value;
+        if(YZM2 == YZM3){
+            return true
+        }
+        alert("验证码错误");
+    }
+
+
+    function YZMIMA() {
+        var YZMIMA = document.getElementById("yzmima").value;
+        var YZMIMA2 = document.getElementById("yzmima2").value;
+        if(YZMIMA == YZMIMA2){
+        return true
+        }
+        alert("两次密码输入不一致");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(function(){
+
+        // 正则
+        // 手机号
+        $("#zz1").blur(function(){
+            var str = $("#zz1").val();
+            var ret =/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/;
+            if(ret.test(str)){
+                $("#zz1").css('border-color','#0F0')
+            }else{
+                alert("手机格式不正确");
+            }
+        });
+
+        // 密码
+        $("#yzmima").blur(function(){
+            var str = $("#yzmima").val();
+            var ret =/^\w{6,12}$/
+            if(ret.test(str)){
+                $("#yzmima").css('border-color','#0F0');
+                $("#yzmima2").css('border-color','#0F0');
+            }else{
+                alert("密码格式错误必须6-12位")
+            }
+        });
+
+
+
+
+        $.get("http://47.104.244.134:8080/username.do",{username:"$('#zz1').val()"}).done(data=>{
+            console.log(data);
+        });
+
+        $("#yzmtj").click(function(){
+            $.post("http://47.104.244.134:8080/usersave.do",{
+                username:$("#zz1").val(),
+                password:$("#yzmima").val(),
+                email:"15518541864184@qq.com",
+                sex:"女"
+            }).done(data=>{
+                console.log(data);
+                if(data.code==0){
+                    alert("成功")
+                }else{
+                    alert("失败")
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
