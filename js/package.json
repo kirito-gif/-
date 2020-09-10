@@ -918,7 +918,7 @@
     "yargs": "^7.1.0",
     "yallist": "^2.1.2",
     "y18n": "^3.2.1",
-    "yargs-parser": "^5.0.0"
+    "yargs-parser": "^20.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
